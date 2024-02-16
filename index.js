@@ -16,7 +16,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: ["http://192.168.0.129:3000/","https://forum-amber.vercel.app/"]
+        origin: ["http://192.168.0.129:3000/","https://forum-amber.vercel.app/socket.io"]
     }
 });
 
