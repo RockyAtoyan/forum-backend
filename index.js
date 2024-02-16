@@ -3,18 +3,22 @@ import {Server} from "socket.io";
 import http from "http";
 import cors from "cors"
 
-const app = express()
+export const app = express()
 app.use(cors({
     origin: "*",
 }))
 
-app.get("/", (req, res) => {
+const router = express.Router()
+
+router.get("/", (req, res) => {
     return res.send("Hello world")
 })
 
+app.use(".netlify/functions/api", router)
+
 const server = http.createServer(app);
 
-const io = new Server(server, {
+export const io = new Server(server, {
     cors: {
         origin: "*"
     }
