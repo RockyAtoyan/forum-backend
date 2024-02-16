@@ -5,7 +5,7 @@ import cors from "cors"
 
 const app = express()
 app.use(cors({
-    origin: ["http://192.168.0.129:3000/"],
+    origin: ["http://192.168.0.129:3000/", "https://forum-amber.vercel.app/"],
 }))
 
 app.get("/", (req, res) => {
@@ -16,7 +16,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: ["http://192.168.0.129:3000/"]
+        origin: ["http://192.168.0.129:3000/","https://forum-amber.vercel.app/"]
     }
 });
 
