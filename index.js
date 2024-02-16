@@ -5,14 +5,14 @@ import cors from "cors"
 
 const app = express()
 app.use(cors({
-    origin: '*',
+    origin: ['*', "http://192.168.0.129:3000/"],
 }))
 
 const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: "*"
+        origin: ["*", "http://192.168.0.129:3000/"]
     }
 });
 
