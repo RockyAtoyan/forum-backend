@@ -10,11 +10,9 @@ app.use(cors({
 
 const router = express.Router()
 
-router.get("/", (req, res) => {
+app.get("/", (req, res) => {
     return res.send("Hello world")
 })
-
-app.use(".netlify/functions/api", router)
 
 const server = http.createServer(app);
 
